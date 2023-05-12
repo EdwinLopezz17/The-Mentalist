@@ -1,0 +1,102 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display:flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg,#50A5AB, #8A191F);
+}
+.wrapper{
+    height: 480px;
+    width: 320px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+.wrapper .card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    background-color: #e3d5d5;  
+    border-radius: 10px;
+    transform: translateY(0deg);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 15px rgba(0,0,0,.9);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2,1);
+}
+.wrapper:hover > .front{
+    transform: rotateY(-180deg);
+}
+.wrapper .card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.wrapper .back{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transform: rotateY(180deg);
+}
+.wrapper:hover > .back{
+    transform: rotateY(0deg);
+}
+.wrapper .back img{
+    height: 150px;
+    width: 150px;
+    padding: 5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg,#50A5AB, #8A191F);
+}
+.wrapper .back .info{
+    text-align: center;
+    font-weight: bold;
+}
+.wrapper .back .info p{
+    color:black;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.wrapper .back .name{
+    font-size: 2rem;
+    border-bottom: 1px solid black;
+}
+.back ul{
+    display: flex;
+    align-items: center;
+}
+.back ul a{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    color: #50A5AB;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    line-height: 38px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(375deg, transparent, transparent);
+    transition: all .5s ease;
+    text-decoration: none;
+}
+.back ul .icon{
+    width: 90%;
+    height: 90%;
+}
+.back  ul a:hover{
+    color: #8A191F;
+}
